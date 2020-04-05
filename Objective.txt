@@ -1,0 +1,24 @@
+
+Our problem is to make a vitals monitor for patients in an isolated ward.
+
+Scenario: Lots of patients, isolated ward, very few caregivers/responders. System to alert exactly who is in need of attention
+Objective: Alert caregiver/responder to patient in distress, so they may intervene rapidly.
+
+There will be a bunch of sensors to take continuous readings: ecg, blood pressure, respiratory rate, blood oxygen level.
+These signals have to be processed and put together on a single clean display.
+The individual measurements and associated circuits are fairly simple, you'll find them online easily. It's putting them together with a decision making software to sound an
+ alarm that will be a little challenging.
+Keeping in mind possible non availability of parts
+
+Parameters to be measured
+1) Blood pressure
+2) Blood oxygen saturation level (aka pulse oximeter)
+3) Electrocardiogram (ECG) waveform and some calculations pertaining the waveform (QT interval, RR interval)
+4) Respiratory rate
+
+
+Example of similar products: https://www.caretakermedical.net/
+
+Each measurement will be compared to thresholds provided by medical experts (lower and/or upper)
+If measurement falls out of range, it should trigger an alarm
+Thresholds must be modifiable for each patient as they may vary significantly.
