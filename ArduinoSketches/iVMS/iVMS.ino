@@ -6,8 +6,8 @@
 
 #define ENABLE_RAW_IR_RED_DATA_OUT // uncomment to get continuous raw data on Serial monitor
 
-//measurement duration is approx Buffer_SZ/25 (in seconds). And Max buffer size is 200 ( 8 seconds)
-#define MAX30102_MEASUREMENT_BUFFER_SZ  50 
+//measurement duration is approx Buffer_SZ/25 (in seconds). And Max buffer size is 100 ( 4 seconds)
+#define MAX30102_MEASUREMENT_BUFFER_SZ   100
 
 void setup()
 {
@@ -24,14 +24,19 @@ void loop()
 {
   max30102_measure(MAX30102_MEASUREMENT_BUFFER_SZ);
 
-  if(0)//(max30102_isDataValid())
+  if(max30102_isDataValid())
   {
       Serial.print(F("SPO2="));
       Serial.print(max30102_getSpO2(), DEC);
       Serial.print(F(", HR="));
       Serial.print(max30102_getHeartRate(), DEC);
       Serial.println();
+      refreshLcd();
+  }
+  else
+  {
+    lcd_fingerMissing();
   }
   
-  refreshLcd();
+
 }

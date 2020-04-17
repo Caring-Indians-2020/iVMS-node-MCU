@@ -16,9 +16,15 @@ void lcdSetup(void)
 
 void lcd_fingerMissing(void)
 {
+  unsigned long currentMillis = millis();
+
+  if (currentMillis - previousLcdUpdateMillis >= lcdUpdateInterval)
+  {
+      previousLcdUpdateMillis = currentMillis;
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print(" No finger?");
+  }
 }
 void refreshLcd(void)
 {
