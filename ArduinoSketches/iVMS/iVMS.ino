@@ -1,12 +1,12 @@
+#include <PubSubClient.h>
+
 #include <LiquidCrystal_I2C.h>
 #include <Wire.h>
 #include "MAX30105.h"
 #include "spo2_algorithm.h"
 #include "heartRate.h"
 
-#define ENABLE_RAW_IR_RED_DATA_OUT // uncomment to get continuous raw data on Serial monitor
-
-//measurement duration is approx Buffer_SZ/25 (in seconds). And Max buffer size is 100 ( 4 seconds)
+//measurement duration is approx Buffer_SZ/25 (in seconds). And Max buffer size is 100 (4 seconds)
 #define MAX30102_MEASUREMENT_BUFFER_SZ   100
 
 void setup()
@@ -26,17 +26,11 @@ void loop()
 
   if(max30102_isDataValid())
   {
-      Serial.print(F("SPO2="));
-      Serial.print(max30102_getSpO2(), DEC);
-      Serial.print(F(", HR="));
-      Serial.print(max30102_getHeartRate(), DEC);
-      Serial.println();
       refreshLcd();
+      max30102_printPPG_to_UART();
   }
   else
   {
     lcd_fingerMissing();
   }
-  
-
 }
