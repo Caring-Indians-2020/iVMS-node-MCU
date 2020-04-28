@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <style>
+            body {
+                color: #434343;
+                font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+                font-size: 14px;
+                background-color: #eeeeee;
+                margin-top: 100px;
+            }
+
+            .container {
+                margin: 0 auto;
+                max-width: 400px;
+                padding: 30px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+                background-color: #ffffff;
+            }
+
+            h1 {
+                text-align: center;
+                margin-bottom: 40px;
+                margin-top: 0px;
+                color: #939393;
+                font-size: 35px;
+            }
+
+            form .field-group {
+                box-sizing: border-box;
+                clear: both;
+                padding: 4px 0;
+                position: relative;
+                margin: 1px 0;
+                width: 100%;
+            }
+
+            form .field-group > label {
+                color: #757575;
+                display: block;
+                margin: 0 0 5px 0;
+                padding: 5px 0 0;
+                position: relative;
+                word-wrap: break-word;
+            }
+
+            input[type=text] {
+                font-size: 15px;
+                margin-bottom: 4%;
+                -webkit-appearance: none;
+                display: block;
+                background: #fafafa;
+                color: #636363;
+                width: 100%;
+                border: none;
+                border-radius: 0;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-bottom: 1px solid #00bcd4;
+                background-color: transparent;
+            }
+
+            input[type=text]:focus {
+                border-color: #4C669F;
+                outline: 0;
+            }
+
+            .button-container {
+                box-sizing: border-box;
+                clear: both;
+                margin: 1px 0 0;
+                padding: 4px 0;
+                position: relative;
+                width: 100%;
+            }
+
+            button[type=submit] {
+                background: #00bcd4;
+                border: none;
+                border-radius: 30px;
+                color: #ffffff;
+                cursor: pointer;
+                display: block;
+                font-weight: bold;
+                font-size: 16px;
+                padding: 15px 0;
+                margin-top: 12%;
+                text-align: center;
+                text-transform: uppercase;
+                width: 100%;
+                -webkit-transition: background 250ms ease;
+                -moz-transition: background 250ms ease;
+                -o-transition: background 250ms ease;
+                transition: background 250ms ease;
+            }
+
+            a {
+                text-decoration: none;
+                color: #00bcd4;
+                position: fixed;
+                right: 12px;
+                font-size: 18px;
+                bottom: 7px;
+                border-bottom: 1px solid #00bcd4;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 style="text-align: center;">iVMS</h1>
+            <form method="post" action="/">
+                <div class="field-group">
+                    <input name="ssid" type="text" length=32 placeholder="SSID">
+                </div>
+                <div class="field-group">
+                    <input name="password" type="text" length=64 placeholder="Password">
+                </div>
+				<div class="field-group">
+                    <input name="hospitalName" type="text" length=64 placeholder="Name of the Hospital">
+                </div>
+				<div class="field-group">
+                    <input name="buildingNumber" type="text" length=32 placeholder="Building Number">
+                </div>
+				<div class="field-group">
+                    <input name="floorNumber" type="text" length=32 placeholder="Floor Number">
+                </div>
+				<div class="field-group">
+                    <input name="roomNumber" type="text" length=32 placeholder="Room Number">
+                </div>
+				<div class="field-group">
+                    <input name="bedNumber" type="text" length=32 placeholder="Bed Number">
+                </div>
+                <div class="button-container">
+                    <button type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

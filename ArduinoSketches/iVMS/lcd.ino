@@ -26,6 +26,37 @@ void lcd_fingerMissing(void)
     lcd.print(" No finger?");
   }
 }
+
+void clearLCDLine(int line)
+{               
+  lcd.setCursor(0,line);
+  for(int n = 0; n < 16; n++)
+  {
+    lcd.print(" ");
+  }
+}
+
+void lcd_print(byte lineNum, char* startPtr)
+{
+  if((lineNum == 0) || (lineNum == 1))
+  {
+    clearLCDLine(lineNum);
+    lcd.setCursor(0,lineNum);
+    if(NULL != startPtr)
+      lcd.print(startPtr);
+  }
+}
+
+void lcd_wifi_hotspot(char* softApName)
+{
+  lcd.clear();
+  
+  lcd.setCursor(0,0);
+  lcd.print("Connect to:");
+  lcd.setCursor(0,1);
+  lcd.print(softApName);
+}
+
 void refreshLcd(void)
 {
   unsigned long currentMillis = millis();
