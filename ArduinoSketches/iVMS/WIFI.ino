@@ -47,10 +47,9 @@ void wifi_setup(void)
   if(WL_CONNECTED != wifi_status)
   {
     //Unable to connect with past credentials, use softAP to fetch ssid and password from user
-    unsigned char mac[6];
     char apCharBuf[24];
-    WiFi.macAddress(mac); 
-    String apName= macToStr(mac);
+    WiFi.macAddress(g_devCfg.mac); 
+    String apName= macToStr(g_devCfg.mac);
     apName.toCharArray(apCharBuf,24);
     Serial.println("Requesting password over local hotspot");
     Serial.print("Created Hotspot with name ");

@@ -22,7 +22,15 @@ typedef struct
   char floorNum[32]; 
   char roomNum[32]; 
   char bedNum[32];
+  unsigned char mac[6];
 }stc_device_congfig;
+
+typedef enum
+{
+  MAX30102_HEART_RATE,
+  MAX30102_SP02,
+  INVALID_DATA_TYPE = 0xFF
+}enumSensorDataType;
 
 stc_device_congfig g_devCfg;
 
@@ -50,6 +58,7 @@ void setup()
   Serial.println(F("Attach sensor to finger with rubber band."));
   max30102_Setup();
   delay(500);
+  mqtt_setup();
 }
 
 void loop()
@@ -60,6 +69,7 @@ void loop()
   {
       refreshLcd();
       max30102_printPPG_to_UART();
+      mqtt_loop();
   }
   else
   {
