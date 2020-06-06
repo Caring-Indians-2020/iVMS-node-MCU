@@ -68,5 +68,7 @@ void wifi_setup(void)
     Serial.println(WiFi.SSID());
     Serial.print("IP address:\t");
     Serial.println(WiFi.localIP());
+    lcd_print(0,"Onboard Patient:");
+    lcd_print(1,(char*)WiFi.localIP().toString().c_str());
   }
 }
