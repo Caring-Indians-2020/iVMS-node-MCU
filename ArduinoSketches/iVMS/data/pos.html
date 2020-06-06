@@ -118,34 +118,34 @@
     </head>
     <body>
         <div class="container">
-            <h1 style="text-align: center;">iVMS</h1>
+            <h1 style="text-align: center;">iVMS (Patient Onboarding)</h1>
             <form method="post" action="/">
                 <div class="field-group">
-                    <input name="ssid" type="text" length=32 placeholder="SSID">
+                    <input name="pID" type="text" length=32 placeholder="Patient ID">
                 </div>
                 <div class="field-group">
-                    <input name="password" type="text" length=64 placeholder="Password">
+                    <input name="pName" type="text" length=64 placeholder="Patient Name">
                 </div>
 				<div class="field-group">
-                    <input name="hospitalName" type="text" length=64 placeholder="Name of the Hospital">
+                    <input name="pAge" type="text" length=64 placeholder="Patient Age">
                 </div>
 				<div class="field-group">
-                    <input name="buildingNumber" type="text" length=32 placeholder="Building Number">
+                    <input name="pGender" type="text" length=32 placeholder="Patient Gender">
                 </div>
 				<div class="field-group">
-                    <input name="floorNumber" type="text" length=32 placeholder="Floor Number">
+                    <input name="pMinHR" type="text" length=32 placeholder="Heart Rate Minima (Default 60)">
                 </div>
 				<div class="field-group">
-                    <input name="roomNumber" type="text" length=32 placeholder="Room Number">
+                    <input name="pMaxHR" type="text" length=32 placeholder="Heart Rate Maxima (Default 140)">
                 </div>
 				<div class="field-group">
-                    <input name="bedNumber" type="text" length=32 placeholder="Bed Number">
+                    <input name="pMinspO2" type="text" length=32 placeholder="spO2 Minima (Default 92)">
                 </div>
 				<div class="field-group">
-                    <input name="serverAddress" type="text" length=32 placeholder="MQTT Broker IP">
+                    <input name="pMaxSysBP" type="text" length=32 placeholder="Systolic BP Maxima (Default 90)">
                 </div>
 				<div class="field-group">
-                    <input name="brokerPort" type="text" length=32 placeholder="MQTT Broker Port Number">
+                    <input name="pMaxDiaBP" type="text" length=32 placeholder="Diastolic BP Maxima (Default 140)">
                 </div>
                 <div class="button-container">
                     <button type="submit">Save</button>
